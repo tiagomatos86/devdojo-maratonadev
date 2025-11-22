@@ -1,6 +1,4 @@
-package academy.devdojo.maratonajava.javacore.Rdates.test;
-
-import com.sun.security.jgss.GSSUtil;
+package academy.devdojo.maratonajava.javacore.Sformatacao.test;
 
 import java.text.DateFormat;
 import java.util.Calendar;
@@ -16,6 +14,9 @@ public class LocaleTest01 {
         Locale localeIndia = new Locale("hi", "IN");
         Locale localeJapan = new Locale("ja", "JP");
         Locale localeNetherlands = new Locale("nl", "NL");
+        Locale localeArabia = new Locale("ar", "SA");
+        Locale localeIsrael = new Locale("he", "IL");
+        Locale localeKorea = Locale.KOREA;
 
         Calendar calendar = Calendar.getInstance();
 
@@ -24,12 +25,18 @@ public class LocaleTest01 {
         DateFormat df3 = DateFormat.getDateInstance(DateFormat.FULL, localeIndia);
         DateFormat df4 = DateFormat.getDateInstance(DateFormat.FULL, localeJapan);
         DateFormat df5 = DateFormat.getDateInstance(DateFormat.FULL, localeNetherlands);
+        DateFormat df6 = DateFormat.getDateInstance(DateFormat.FULL, localeArabia );
+        DateFormat df7 = DateFormat.getDateInstance(DateFormat.FULL, localeIsrael );
+        DateFormat df8 = DateFormat.getDateInstance(DateFormat.FULL, localeKorea );
 
         System.out.println("Italy: " + df1.format(calendar.getTime()));
         System.out.println("Switzerland: " + df2.format(calendar.getTime()));
         System.out.println("India: " + df3.format(calendar.getTime()));
         System.out.println("Japan: " + df4.format(calendar.getTime()));
         System.out.println("Netherlands: " + df5.format(calendar.getTime()));
+        System.out.println("Saudi Arabia: " + df6.format(calendar.getTime()));
+        System.out.println("Israel: " + df7.format(calendar.getTime()));
+        System.out.println("Korea: " + df8.format(calendar.getTime()));
 
         // Exibe o padrão no idioma do meu sistema
         System.out.println(localeItaly);
@@ -37,6 +44,9 @@ public class LocaleTest01 {
         System.out.println(localeIndia);
         System.out.println(localeJapan);
         System.out.println(localeNetherlands);
+        System.out.println(localeArabia);
+        System.out.println(localeIsrael);
+        System.out.println(localeKorea);
 
         // Exibe o país padrão no idioma do meu sistema
         System.out.println(localeItaly.getDisplayCountry());
@@ -44,6 +54,9 @@ public class LocaleTest01 {
         System.out.println(localeIndia.getDisplayCountry());
         System.out.println(localeJapan.getDisplayCountry());
         System.out.println(localeNetherlands.getDisplayCountry());
+        System.out.println(localeArabia.getDisplayCountry());
+        System.out.println(localeIsrael.getDisplayCountry());
+        System.out.println(localeKorea.getDisplayCountry());
 
         // Exibe no idionma do padrao
         System.out.println(localeItaly.getDisplayCountry(localeItaly));
@@ -51,5 +64,8 @@ public class LocaleTest01 {
         System.out.println(localeIndia.getDisplayCountry(localeIndia));
         System.out.println(localeJapan.getDisplayCountry(localeJapan));
         System.out.println(localeNetherlands.getDisplayCountry(localeNetherlands));
+        System.out.println(localeArabia.getDisplayCountry(localeArabia));
+        System.out.println(localeIsrael.getDisplayCountry(localeIsrael));
+        System.out.println(localeKorea.getDisplayCountry(localeKorea));
     }
 }
