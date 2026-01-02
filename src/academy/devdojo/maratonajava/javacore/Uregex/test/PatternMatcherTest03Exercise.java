@@ -15,6 +15,5 @@ public class PatternMatcherTest03Exercise {
         while (matcher.find()) {
             System.out.print(matcher.start()+" "+matcher.group()+"\n");
         }
-
     }
 }
