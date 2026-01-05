@@ -24,6 +24,7 @@ public class PatternMatcherTest05 {
              *  | ou
              *  $ representa o fim da linha
              *  \b (em Java) representa um limite de palavra (word boundary), é a posição onde ocorre a transição entre um caracter de palavra e caractere que não é de palavra (ou início/fim da string)
+             *  ^ fora de colchetes → início da string (ou linha) Quando usado fora de [], o ^ é um âncora (anchor). Dentro dos colchetes negação. Quando aparece logo após [, o ^ inverte o conjunto.
          */
 
         String regex = "([a-zA-Z0-9\\._-])+@([a-zA-Z])+(\\.([a-zA-Z])+)+";
