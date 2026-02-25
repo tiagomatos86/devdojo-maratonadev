@@ -25,5 +25,24 @@ public class Smartphone {
         this.marca = marca;
     }
 
-
+    // Regras equals:
+    // Reflexivo: x.equals(x) tem que ser true para tudo que for diferente de null
+    // Simétrico: para x e y diferentes de null, se x.equals(y) == true logo, y.equals(x) == true
+    // Transitividade: para x, y, z diferentes de null, se x.equals(y) == true, e x.equals(z) == true logo, y.equals(z) == true
+    // Consistente: x.equals(x) sempre retorna true se x for diferente de null
+    // Para x diferente de null, x.equals(null) tem que retornar false
+    @Override
+    public boolean equals(Object obj) {
+        // Implementando o equals
+        // 1º: Verificar se o objeto e nulo
+        if(obj == null) return false;
+        // 2º: Verificar se os dois objetos são o mesmo (se são o mesmo em memória)
+        if(this == obj) return true;
+        // 3º: Verificar se ambos objetos são o mesmo tipo
+        if(this.getClass() != obj.getClass()) return false;
+        // já sabendo que o objeto é um objeto do tipo comparado
+        Smartphone smartphone = (Smartphone) obj;
+        // 4º: compara se os dois objetos são iguais em relação aos atributos (ex do exercício: se ambos smartphones possuem o mesmo serial
+        return serialNumber != null && serialNumber.equals(smartphone.serialNumber);
+    }
 }
