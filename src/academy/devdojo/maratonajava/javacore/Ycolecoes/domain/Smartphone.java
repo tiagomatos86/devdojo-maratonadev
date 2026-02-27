@@ -25,7 +25,7 @@ public class Smartphone {
         this.marca = marca;
     }
 
-    // Regras equals:
+    // Regras de implementação do equals:
     // Reflexivo: x.equals(x) tem que ser true para tudo que for diferente de null
     // Simétrico: para x e y diferentes de null, se x.equals(y) == true logo, y.equals(x) == true
     // Transitividade: para x, y, z diferentes de null, se x.equals(y) == true, e x.equals(z) == true logo, y.equals(z) == true
@@ -44,5 +44,15 @@ public class Smartphone {
         Smartphone smartphone = (Smartphone) obj;
         // 4º: compara se os dois objetos são iguais em relação aos atributos (ex do exercício: se ambos smartphones possuem o mesmo serial
         return serialNumber != null && serialNumber.equals(smartphone.serialNumber);
+    }
+
+    // Regras de implementação do hashCode
+    // se x.equals(y) == true, y.hasCode() == x.hashCode
+    // y.hashCode() == x.hashCode() não necessariamente o equals de y.equals(x) tem que ser true.
+    // x.equals(y) == false o hashCode será diferente
+    // y.hashCode() != x.hashCode() x.equals(y) == false
+    @Override
+    public int hashCode() {
+        return serialNumber != null ? this.serialNumber.hashCode() : 0 ; //retorna zero caso o serialNumber seja null para evitar NullPointerException
     }
 }
