@@ -55,4 +55,12 @@ public class Smartphone {
     public int hashCode() {
         return serialNumber != null ? this.serialNumber.hashCode() : 0 ; //retorna zero caso o serialNumber seja null para evitar NullPointerException
     }
+
+    @Override
+    public String toString() {
+        return "Smartphone{" +
+                "serialNumber='" + serialNumber + '\'' +
+                ", marca='" + marca + '\'' +
+                '}';
+    }
 }
