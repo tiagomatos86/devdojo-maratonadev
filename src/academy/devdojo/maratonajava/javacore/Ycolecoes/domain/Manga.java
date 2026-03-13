@@ -2,7 +2,7 @@ package academy.devdojo.maratonajava.javacore.Ycolecoes.domain;
 
 import java.util.Objects;
 
-public class Manga {
+public class Manga implements Comparable<Manga>{
 
     private Long id;
     private String nome;
@@ -62,4 +62,37 @@ public class Manga {
     public int hashCode() {
         return Objects.hash(id, nome, preco);
     }
+
+//    @Override
+//    public int compareTo(Manga outroManga) {
+//        // esse método precisa retornar um inteiro
+//        // retorna negativo se o this < outroManga
+//        // se this == outroManga, return 0
+//        // retorna positivo se this for > outroManga
+//        if(this.id < outroManga.getId()) return -1;
+//        else if(this.id.equals(outroManga.getId())) return 0;
+//        else return 1;
+//    }
+//    @Override
+//    public int compareTo(Manga outroManga) {
+//        // Quando o objeto usar um atributo tipado com uma classe Wrapper (exemplo o id é Long) é possível usar o compareTo da própria classe wrapper
+//        // não funciona ao usar tipos primitivos, apenas wrappers
+//        return this.id.compareTo(outroManga.getId());
+//    }
+
+//    @Override
+//    public int compareTo(Manga outroManga) {
+//        // se usar um tipo primitivo como atributo de comparação, realizar casting
+//        return Double.compare(this.preco, outroManga.getPreco());
+//    }
+
+    @Override
+    public int compareTo(Manga outroManga) {
+        // por ordem alfabética:
+        return this.nome.compareTo(outroManga.getNome());
+    }
+
+
 }
+
+
