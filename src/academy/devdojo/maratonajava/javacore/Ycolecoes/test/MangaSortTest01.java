@@ -1,6 +1,8 @@
 package academy.devdojo.maratonajava.javacore.Ycolecoes.test;
 
 import academy.devdojo.maratonajava.javacore.Ycolecoes.domain.Manga;
+import academy.devdojo.maratonajava.javacore.Ycolecoes.domain.MangaByIdCoparator;
+import academy.devdojo.maratonajava.javacore.Ycolecoes.domain.MangaByPriceCoparator;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,5 +24,14 @@ public class MangaSortTest01 {
         Collections.sort(mangas);
         for(Manga manga : mangas) System.out.println( manga);
 
+        System.out.println("\n----------------------\n");
+
+        Collections.sort(mangas, new MangaByIdCoparator());
+        for(Manga manga : mangas) System.out.println( manga);
+
+        System.out.println("\n----------------------\n");
+
+        mangas.sort(new MangaByPriceCoparator());
+        for(Manga manga : mangas) System.out.println( manga);
     }
 }
