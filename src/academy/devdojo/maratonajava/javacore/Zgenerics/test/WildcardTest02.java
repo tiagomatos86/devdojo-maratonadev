@@ -16,11 +16,22 @@ public class WildcardTest02 {
         List<Gato> gatos = Arrays.asList(new Gato(), new Gato());
         printConsulta(cachorros);
         printConsulta(gatos);
+        List<Animal> animals = new ArrayList<>();
+        printConsultaAnimal(animals);
+        printConsultaAnimal(cachorros);
 
     }
-    private static void printConsulta(List<Animal> animals) {
+
+    // upper bounded wildcard - apenas para leitura dos dados
+    private static void printConsulta(List< ? extends Animal> animals) { // aceitará qualquer objeto que herde de animal
         for (Animal animal : animals) {
             animal.consulta();
         }
+    }
+
+    // lower bounded wildcard - permite escrever/adicionar dados em uma estrutura.
+    private static void printConsultaAnimal(List<? super Animal> animals) {
+        animals.add(new Cachorro());
+        animals.add(new Gato());
     }
 }
