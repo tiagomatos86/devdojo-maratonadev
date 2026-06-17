@@ -18,7 +18,6 @@ public class WildcardTest02 {
         printConsulta(gatos);
         List<Animal> animals = new ArrayList<>();
         printConsultaAnimal(animals);
-        printConsultaAnimal(cachorros);
 
     }
 
