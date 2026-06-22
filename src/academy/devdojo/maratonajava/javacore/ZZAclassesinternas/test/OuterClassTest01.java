@@ -3,6 +3,7 @@ package academy.devdojo.maratonajava.javacore.ZZAclassesinternas.test;
 public class OuterClassTest01 {
     private String name = "Yusuke Urameshi";
 
+    // Nested Classes: classes aninhadas
     class InnerClass {
         public void printOuterClassAttribute() {
             System.out.println(name);
